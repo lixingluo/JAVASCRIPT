@@ -160,4 +160,29 @@ Scope is the accessibility of variables, functions, and objects in some particul
     - 使用闭包实现了一个单例模块，输出了共有变量 a.aa 和 共有方法也称 API 的 a.b。
   
 10. 私有作用域:  **Private Scope**  
-
+    **私有作用域是存在于模块中，只能提供由定义模块直接访问的变量和方法的范围或命名空间**。说白了就是不能直接改动作用域里面定义的变量
+    ```
+    var a = (function a () {
+        var bb = 'bb'
+        function b () {
+            console.log(bb)
+        }
+        function c () {
+            bb = 'dd'
+            console.log(bb)
+        }
+        return {
+            b: b,
+            c: c
+        }
+    })()
+    a.b()
+    a.c()
+    a.b()
+    ```
+    Output:
+    ```
+    bb
+    dd
+    dd
+    ```
