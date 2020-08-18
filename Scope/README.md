@@ -8,7 +8,7 @@ Scope is the accessibility of variables, functions, and objects in some particul
 隐藏内部实现 - 隐藏内部实现的模块模式主要依赖闭包
 
 3. 作用域的生成？  
-作用域的生成主要依靠词法定义。词法定义就是书写规则，编译器会按照所书写的代码确定出作用域范围。许多语言中有函数作用域和块级作用域，JavaScript 主要使用的是函数作用域
+作用域的生成主要依靠词法定义。词法定义就是书写规则，编译器会按照所书写的代码确定出作用域范围。许多语言中有函数作用域和块级作用域，JavaScript主要使用的是函数作用域
 
 4. 词法作用域(又称静态作用域)  
     ```js
@@ -91,6 +91,6 @@ Scope is the accessibility of variables, functions, and objects in some particul
     注意：  
     导致不同输出结果的原因是因为暂时性死区，简写是TDZ。  
     解释：  
-    When a JavaScript engine looks through an upcoming block and finds a variable declaration, it either hoists the declaration to the top of the function or global scope (for var) or places the declaration in the TDZ (for let and const). Any attempt to access a variable in the TDZ results in a runtime error. That variable is only removed from the TDZ, and therefore safe to use, once execution flows to the variable declaration.  
+    When a JavaScript engine looks through an upcoming block and finds a variable declaration, it either hoists the declaration to the top of the function or global scope (for **var**) or places the declaration in the TDZ (for **let** and **const**). Any attempt to access a variable in the TDZ results in a runtime error. That variable is only removed from the TDZ, and therefore safe to use, once execution flows to the variable declaration.  
     翻译：  
-    当 JavaScript 引擎浏览即将出现的代码块并查找变量声明时，它既把声明提升到了函数的顶部或全局作用域（对于var），也将声明放入暂时性死区（对于let和const）。任何想要访问暂时性死区中变量的尝试都会导致运行时错误。只有当执行流到达变量声明的语句时，该变量才会从暂时性死区中移除，可以安全访问
+    当JavaScript引擎浏览即将出现的代码块并查找变量声明时，它既把声明提升到了函数的顶部或全局作用域（对于**var**），也将声明放入暂时性死区（对于**let**和**const**）。任何想要访问暂时性死区中变量的尝试都会导致运行时错误。只有当执行流到达变量声明的语句时，该变量才会从暂时性死区中移除，可以安全访问
