@@ -97,4 +97,6 @@ Scope is the accessibility of variables, functions, and objects in some particul
     记住：  
     let和var声明提前引用导致的结果的区别仅仅是因为在编译器在词法分析阶段，将块级作用域变量做了特殊处理，用暂时性死区把它们包裹住，保持块级作用域的特性。
     
-7. 
+7. 全局作用域  
+    全局作用域就是运行时的顶级作用域，在所有函数之外定义的变量都归属于全局作用域。浏览器中的全局作用域就是windows，Node.js里就是global对象。全局作用域运行时会由引擎实现，跟开发者无关。
+    
