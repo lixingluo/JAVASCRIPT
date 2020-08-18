@@ -62,3 +62,29 @@ Scope is the accessibility of variables, functions, and objects in some particul
     注：而它的静指的是运行前在编译阶段，编译器收集了嵌套层次，根据词法规则，形成了变量查找规则依赖的作用域链。  
     注：运行时，调用栈会根据JavaScript**先进后出的**同步执行机制，使函数像栈的数据结构排成队列先后运行。  
     注：所以上述函数，a的调用出现在c之前，运行时a会先被调用，全局作用域之后会先后进入a的作用域->b的作用域->c的作用域，b内报错了，c也就不会编译执行了。
+    
+6. 垃圾作用域
+    ```
+    if (a === 'a') {
+        let a = 'a'
+        console.log(a)
+    } else {
+        console.log('a is not defined！')
+    }
+    ```
+    Output:
+    ```
+    Uncaught ReferenceError: a is not defined
+    ```
+    ```
+    if (a === 'a') {
+        var a = 'a'
+        console.log(a)
+    } else {
+        console.log('a is not defined！')
+    }
+    ```
+    Output:
+    ```
+    a is not defined！
+    ```
