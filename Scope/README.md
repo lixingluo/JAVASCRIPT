@@ -101,6 +101,42 @@ Scope is the accessibility of variables, functions, and objects in some particul
     **全局作用域就是运行时的顶级作用域，在所有函数之外定义的变量都归属于全局作用域**。浏览器中的全局作用域就是windows，Node.js里就是global对象。全局作用域运行时会由引擎实现，跟开发者无关。  
     全局作用域里的变量越少越好，具体参考**全局污染**。
     
-8. 局部作用域
+8. 局部作用域  
     **局部作用域就是在全局作用域之下创建的任何内层作用域**，函数和块级作用域都是局部作用域。
+    
+9. 公有作用域
+    **公有作用域存在于模块中，它是提供项目中所有其他模块都可以访问的变量和方法的范围或命名空间**。
+    ```
+    function a () {
+        var aa = 'aa'
+        function b () {
+            var bb = 'bb'
+        }
+        b()
+        console.log(bb)
+    }
+    a()
+    ```
+    Output:
+    ```
+    Uncaught ReferenceError: bb is not defined
+    ```
+    ```
+    function a () {
+        var aa = 'aa'
+        function b () {
+            var bb = 'bb'
+            return function c () {
+                return bb;
+            }
+        }
+        var c = b()
+        console.log(c());
+    }
+    a()
+    ```
+    Output:
+    ```
+    bb
+    ```
     
