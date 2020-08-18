@@ -33,6 +33,6 @@ Scope is the accessibility of variables, functions, and objects in some particul
     aa bb
     Uncaught ReferenceError: aa is not defined
     ```
-    **不关心函数调用在哪里，只关心函数定义在哪里**
+    注：**不关心函数调用在哪里，只关心函数定义在哪里**
 
 5. 函数作用域
