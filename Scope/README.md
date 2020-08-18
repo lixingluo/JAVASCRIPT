@@ -121,6 +121,7 @@ Scope is the accessibility of variables, functions, and objects in some particul
     ```
     Uncaught ReferenceError: bb is not defined
     ```
+    因为函数b在运行完后就从执行栈里出栈了，其内存引用(变量bb)也被内存回收机制(GC)清理掉了
     ```
     function a () {
         var aa = 'aa'
@@ -139,4 +140,5 @@ Scope is the accessibility of variables, functions, and objects in some particul
     ```
     bb
     ```
-    
+    - 变量c保留了对函数b中返回的函数c的引用，函数c又根据词法作用域法则，能够进入函数b的作用域查找变量，这个引用形成的闭包就被保存在函数a中变量c的值中。
+    - 函数a可以在任何想要的时候调用这个闭包来获取函数b里的数据，此时这个被返回的变量bb就成为了暴露在函数a的作用域范围内，定义在函数b里的公有作用域变量。
