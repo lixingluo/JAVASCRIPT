@@ -160,7 +160,8 @@ Scope is the accessibility of variables, functions, and objects in some particul
     - 使用闭包实现了一个单例模块，输出了共有变量 a.aa 和 共有方法也称 API 的 a.b。
   
 10. 私有作用域:  **Private Scope**  
-    **私有作用域是存在于模块中，只能提供由定义模块直接访问的变量和方法的范围或命名空间**。说白了就是不能直接改动作用域里面定义的变量
+    **私有作用域是存在于模块中，只能提供由定义模块直接访问的变量和方法的范围或命名空间**。  
+    说白了就是不能直接改动作用域里面定义的变量
     ```
     var a = (function a () {
         var bb = 'bb'
@@ -189,4 +190,6 @@ Scope is the accessibility of variables, functions, and objects in some particul
     注：模块暴露的两个方法b和c，分别实现了一个查找操作和修改操作，间接控制模块中上述两个私有作用域变量。
     
 12. 作用域与this：**Scope vs This **  
-    作用域不是this对象，证据1，函数调用时，函数内部的this指向的不是函数本身，而是全局对象(最坑无比)。证据2，this是在运行时动态绑定到函数作用域上的。
+    作用域不是this对象  
+    证据1，函数调用时，函数内部的this指向的不是函数本身，而是全局对象(最坑无比)。  
+    证据2，this是在运行时动态绑定到函数作用域上的。
