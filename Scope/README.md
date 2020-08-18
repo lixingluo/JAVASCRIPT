@@ -186,3 +186,7 @@ Scope is the accessibility of variables, functions, and objects in some particul
     dd
     dd
     ```
+    注：模块暴露的两个方法b和c，分别实现了一个查找操作和修改操作，间接控制模块中上述两个私有作用域变量。
+    
+12. 作用域与this：**Scope vs This **  
+    作用域不是this对象，证据1，函数调用时，函数内部的this指向的不是函数本身，而是全局对象(最坑无比)。证据2，this是在运行时动态绑定到函数作用域上的。
