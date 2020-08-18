@@ -93,7 +93,7 @@ Scope is the accessibility of variables, functions, and objects in some particul
     解释：  
     When a JavaScript engine looks through an upcoming block and finds a variable declaration, it either hoists the declaration to the top of the function or global scope (for **var**) or places the declaration in the TDZ (for **let** and **const**). Any attempt to access a variable in the TDZ results in a runtime error. That variable is only removed from the TDZ, and therefore safe to use, once execution flows to the variable declaration.  
     翻译：  
-    当JavaScript引擎浏览即将出现的代码块并查找变量声明时，它既把声明提升到了函数的顶部或全局作用域（对于**var**），也将声明放入暂时性死区（对于**let**和**const**）。任何想要访问暂时性死区中变量的尝试都会导致运行时错误。只有当执行流到达变量声明的语句时，该变量才会从暂时性死区中移除，可以安全访问。
+    当JavaScript引擎浏览即将出现的代码块并查找变量声明时，它既把声明提升到了函数的顶部或全局作用域（对于**var**），也将声明放入暂时性死区（对于**let**和**const**）。任何想要访问暂时性死区中变量的尝试都会导致运行时错误。只有当执行流到达变量声明的语句时，该变量才会从暂时性死区中移除，可以安全访问。  
     记住：  
     let和var声明提前引用导致的结果的区别仅仅是因为在编译器在词法分析阶段，将块级作用域变量做了特殊处理，用暂时性死区把它们包裹住，保持块级作用域的特性。
     
