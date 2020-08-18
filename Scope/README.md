@@ -10,7 +10,7 @@ Scope is the accessibility of variables, functions, and objects in some particul
 3. 作用域的生成？  
 作用域的生成主要依靠词法定义。词法定义就是书写规则，编译器会按照所书写的代码确定出作用域范围。许多语言中有函数作用域和块级作用域，JavaScript 主要使用的是函数作用域
 
-4. 词法作用域  
+4. 词法作用域(又称静态作用域)  
     ```js
     function a () {
         var aa = 'aa';
@@ -36,3 +36,25 @@ Scope is the accessibility of variables, functions, and objects in some particul
     注：**不关心函数调用在哪里，只关心函数定义在哪里**
 
 5. 函数作用域
+    ```js
+    function c () {
+        var cc = 'cc'
+        console.log(cc)
+    }
+    function a () {
+        var aa = 'aa'
+        console.log(aa)
+        b();
+    }
+    function b () {
+        var bb = 'bb'
+        console.log(aa, bb)
+    }
+    a();
+    c();
+    ```
+    Output:
+    ```js
+    aa
+    Uncaught ReferenceError: aa is not defined
+    ```
